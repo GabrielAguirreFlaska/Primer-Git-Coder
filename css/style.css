@@ -1,0 +1,1124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+
+/*BARRA DE NAVEGACION*/
+
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+/*HEADER SUPEIOR*/
+
+.header__superior {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.logo {
+    width: 250px;
+}
+
+/*BARRA MENU*/
+
+.container__menu {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(29, 29, 167);
+    padding: 0px 20px;
+    margin-bottom: 1px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+}
+
+nav > ul {
+    height: 100%;
+    display: flex;
+}
+
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+nav > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: beige;
+    transition: all 300ms ease;
+
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1);
+    background-color: rgb(35, 106, 211);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+/*SUBMENU*/
+
+nav ul li ul {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 90px;
+    left: -5px;
+    padding: 14px 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    z-index: 10;
+    transition: all 300ms ease;
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+nav ul li ul:before{
+    content:"";
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+nav ul li ul li a {
+    display: block;
+    color: rgb(35, 106, 211);
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover{
+    background: rgb(29, 29, 167);
+    color: beige;
+    transform: scale(1.1);
+    padding-left: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.icon__menu{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    align-items: center;
+    display: none;
+}
+
+#label__check{
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check__menu{
+    display: none;
+}
+
+
+/*FIN BARRA DE NAVEGACION*/
+
+/*SECCION FONDOS*/
+
+body{
+    background-image: url(../img/areacomun/IMG_20220403_120526.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(255, 255, 255);
+}
+
+
+#departamentos{
+    background-image: url(../img/fondopinturas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 200px;
+    padding-top: 150px;
+}
+
+/*FIN FONDOS*/
+
+/*SECCION NOSOTROS*/
+
+.titulo-hygge{
+    margin-top: 50px;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
+div h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(35, 106, 211);
+    margin-top: 450px;
+}
+
+.titulo-hygge h2{
+    font-family: 'Lora', serif;
+    color: rgb(35, 106, 211);
+}
+
+.nosotros-titulo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nosotros-titulo h2{
+    font-family: 'Lora', serif;
+    color: rgb(35, 106, 211);
+    margin-top: 28%;
+}
+
+
+.seccion-nosotros{
+    margin: 40px;
+    padding: 90px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.seccion-nosotros p{
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(35, 106, 211);
+}
+
+
+/*FIN NOSOTROS*/
+
+
+/*SECCION DEPARTAMENTOS INDEX CON GRID*/
+
+
+.departamentos-titulo h2 {
+    padding-bottom: 50px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: rgb(35, 106, 211);
+}
+
+.departamentos{
+    display: grid;
+    grid-template-areas: 
+    "departamento-1 departamento-2 departamento-3";
+    grid-template-rows: auto;
+    grid-gap: 1em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.departamento-1{
+    grid-area: "departamento-1";
+}
+.departamento-2{
+    grid-area: "departamento-2";
+}
+
+.departamento-3{
+    grid-area: "departamento-3";
+}
+
+.departamento-1 img{
+    width: 100%;
+    border: 2px solid rgb(35, 106, 211);
+    border-radius: 2%;
+}
+
+.departamento-1 img:hover{
+    width: 102%;
+}
+
+.departamento-2 img{
+    width: 100%;
+    border: 2px solid rgb(35, 106, 211);
+    border-radius: 2%;
+}
+
+.departamento-2 img:hover{
+    width: 102%;
+}
+
+.departamento-3 img{
+    width: 100%;
+    border: 2px solid rgb(35, 106, 211);
+    border-radius: 2%;
+}
+
+.departamento-3 img:hover{
+    width: 102%;
+}
+
+
+/*FIN DEPARTAMENTOS INDEX*/
+
+
+/*SECCION DE GALERIA*/
+
+
+
+
+#galeria{
+    margin-bottom: 11%;
+}
+
+.galeria-titulo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.galeria-titulo h2{
+    text-align: center;
+    color: rgb(35, 106, 211);
+    padding-top: 3%;
+    font-family: 'Lora', serif;
+}
+
+.galeria-fila1{
+    padding-top: 10%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.galeria-fila1 img{
+    border: 2px solid black;
+    border-radius: 2%;
+    width: 350px;
+}
+
+
+
+/*FIN GALERIA*/
+
+
+/*SECCION CONTACTO*/
+
+.TituloDeContacto{
+    margin-top: 450px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: rgb(35, 106, 211);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+#div-contacto{
+    background-color: rgb(241, 241, 241);
+    color: #fff;
+    padding: 0 1.5em;
+    margin-top: 30%;
+    margin-bottom: 20%;
+}
+
+#contacto{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1,5em
+}
+
+.contacto-titulo{
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Lora', serif;
+    color: rgb(35, 106, 211);;
+    margin-bottom: 3%;
+}
+
+.contacto-wrapper{
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contacto-wrapper > *{
+    padding: 1em;
+}
+
+.contacto-form{
+    background-color: rgb(29, 29, 167);
+}
+
+.contacto-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contacto-form form .block{
+    grid-column: 1/3;
+}
+
+.contacto-form form p{
+    margin: 0;
+    padding: 1em;
+}
+
+.contacto-form form button,
+.contacto-form form input,
+.contacto-form form textarea{
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    border-bottom: 1px solid rgb(35, 106, 211);
+    color: #fff;
+}
+
+.contacto-form form button{
+    background: rgb(35, 106, 211);
+    color: #000000;
+    border: 0;
+    text-transform:uppercase;
+    padding: 1em;
+}
+
+.contacto-form form button:hover,
+.contacto-form form button:focus{
+    background: #d63031;
+    color:#fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+.contacto-info{
+    background-color: rgb(35, 106, 211);
+}
+
+.contacto-info h4,
+.contacto-info ul,
+.contacto-info p{
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.contacto-info ul{
+    list-style: none;
+    padding: 0;
+}
+
+.contacto-info ul li{
+    padding: .4em;
+}
+
+
+/*FIN CONTACTO*/
+
+
+/*PIE DE PAGINA*/
+
+
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+}
+
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 30ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aquamarine;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+/*FIN PIE DE PAGINA*/
+
+
+
+/*SECCION DEPARTAMENTO 2 HTML*/
+
+
+.html_depto_2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.html_depto_2 h2{
+    margin-top: 450px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: #008CBA;
+    font-size: 40px;
+}
+
+.html_depto_2_img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+.html_depto_2_img img{
+    width: 600px;
+    padding: 30px;
+    margin-bottom: 200px;
+    border: 5px solid rgb(29, 29, 167);
+    border-radius: 1%;
+}
+
+/*FIN DEPTO 2 HTML*/
+
+/*SECCION DEPARTAMENTO 1 HTML*/
+
+
+.html_depto_1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.html_depto_1 h2{
+    margin-top: 450px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: #008CBA;
+    font-size: 40px;
+}
+
+.html_depto_1_img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+.html_depto_1_img img{
+    width: 600px;
+    padding: 30px;
+    margin-bottom: 200px;
+    border: 5px solid rgb(29, 29, 167);
+    border-radius: 1%;
+}
+
+/*FIN DEPTO 1 HTML*/
+
+
+/*SECCION DEPARTAMENTO 3 HTML*/
+
+
+.html_depto_3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.html_depto_3 h2{
+    margin-top: 450px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: #008CBA;
+    font-size: 40px;
+}
+
+.html_depto_3_img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+.html_depto_3_img img{
+    width: 600px;
+    padding: 30px;
+    margin-bottom: 200px;
+    border: 5px solid rgb(29, 29, 167);
+    border-radius: 1%;
+}
+
+/*FIN DEPTO 3 HTML*/
+
+
+
+/*PANTALLA GRANDE RESPONSIVE PARA CONTACTO*/
+
+
+@media (min-width: 800px){
+    #div-contacto {
+        padding: 0 4rem;
+    }
+
+    .contacto-wrapper{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contacto-wrapper > * {
+        padding: 2em;
+    }
+
+    .contacto-info h4,
+    .contacto-info ul,
+    .contacto-info p{
+        padding: 1em;
+        text-align: left;
+    }
+
+}
+
+
+/*ELEMENTOS RESPONSIVE A PARTIR DE 768 PX */
+
+
+@media screen and (max-width: 768px) {
+
+    .header__superior {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    nav > ul{
+        flex-direction: column;
+        background-color: rgb(29, 29, 167);
+        position: fixed;
+        left: 0;
+        top: 158px;
+        width: 100%;
+        height: 0px;
+        transition: all 300ms ease;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav > ul > li > a:hover{
+        transform: scale(1);
+    }
+
+    nav ul li ul{
+        left: 90px;
+    }
+
+    nav > ul > li:hover ul{
+        top: 50px;
+    }
+
+    #label__check{
+        display: block;
+    }
+
+    .icon__menu{
+        display: flex;
+    }
+
+    #check__menu:checked ~ nav > ul{
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /*PIE DE PAGINA*/
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    /*FONDO DEL BODY*/
+
+    body{
+        background-image: none;
+    }
+
+    
+    /*DEPARTAMENTO 1 HTML*/
+
+    .titulo-hygge h1{
+        margin-top: 300px;
+    }
+
+    .html_depto_1 h2{
+        margin-top: 300px;
+        text-align: center;
+        font-family: 'Lora', serif;
+        color: #008CBA;
+        font-size: 25px;
+    }
+
+    .html_depto_1_img{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 100px;
+    }
+    
+    .html_depto_1_img img{
+        width: 300px;
+        padding: 15px;
+        margin-bottom: 100px;
+        border: 3px solid rgb(29, 29, 167);
+        border-radius: 1%;
+    }
+
+    /*SECCION DEPARTAMENTO 2 HTML*/
+
+
+    .html_depto_2 h2{
+        margin-top: 300px;
+        text-align: center;
+        font-family: 'Lora', serif;
+        color: #008CBA;
+        font-size: 25px;
+    }
+
+    .html_depto_2_img{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 100px;
+    }
+
+    .html_depto_2_img img{
+        width: 300px;
+        padding: 15px;
+        margin-bottom: 100px;
+        border: 3px solid rgb(29, 29, 167);
+        border-radius: 1%;
+    }
+
+
+    /*SECCION DEPARTAMENTO 3 HTML RESPONSIVE*/
+
+    .html_depto_3 h2{
+        margin-top: 300px;
+        text-align: center;
+        font-family: 'Lora', serif;
+        color: #008CBA;
+        font-size: 25px;
+    }
+
+    .html_depto_3_img{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 100px;
+    }
+    
+    .html_depto_3_img img{
+        width: 300px;
+        padding: 15px;
+        margin-bottom: 100px;
+        border: 3px solid rgb(29, 29, 167);
+        border-radius: 1%;
+    }
+
+
+}
+
+/*ELEMENTOS RESPOSIVE A PARTIR DE 720 PX */
+
+@media screen and (max-width: 720px) {
+    
+    /*DEPARTAMENTOS*/
+    
+    .departamentos{
+        display: grid;
+        grid-template-areas: 
+        "departamento-1 departamento-2" 
+        "departamento-3";
+        grid-template-rows: auto;
+        grid-gap: 1em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /*GALERIA*/
+
+    .galeria-fila1 img{
+        border: 1px solid black;
+        border-radius: 2%;
+        width: 150px;
+    }
+
+    /*NOSOTROS*/
+
+    .seccion-nosotros{
+        margin: 0px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 200px;
+    }
+
+    .nosotros-titulo h2{
+        font-family: 'Lora', serif;
+        color: rgb(35, 106, 211);
+        margin-top: 28%;
+        font-size: 20px;
+    }
+    
+    .seccion-nosotros p{
+        text-align: center;
+        padding: 0px;
+        font-size: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgb(35, 106, 211);
+        margin-bottom: 30px;
+    }
+
+}
+
+
+/*ELEMENTOS RESPOSIVE A PARTIR DE 480 PX */
+
+
+@media screen and (max-width: 480px) {
+    
+    /*DEPARTAMENTOS*/
+    
+    .departamentos{
+        display: grid;
+        grid-template-areas: 
+        "departamento-1" 
+        "departamento-2" 
+        "departamento-3";
+        grid-template-rows: auto;
+        grid-gap: 1em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /*CONTACTO*/
+
+
+    .TituloDeContacto{
+        margin-top: 250px;
+        text-align: center;
+        font-family: 'Lora', serif;
+        color: rgb(35, 106, 211);
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    #div-contacto {
+        padding: 0;
+    }
+
+    .contacto-wrapper{
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+
+    .contacto-wrapper > * {
+        padding: 2em;
+    }
+
+    .contacto-info h4,
+    .contacto-info ul,
+    .contacto-info p{
+        padding: 1em;
+        text-align: left;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .contacto-form form p{
+        margin: 0;
+        padding: 3em;
+        font-size: 10px;
+    }
+    
+    .contacto-form form button,
+    .contacto-form form input,
+    .contacto-form form textarea{
+        width: 100%;
+        padding: .7em;
+        border: none;
+        background: none;
+        outline: 0;
+        border-bottom: 1px solid rgb(35, 106, 211);
+        color: #fff;
+    }
+    
+    .contacto-form form button{
+        background: rgb(35, 106, 211);
+        color: #000000;
+        border: 0;
+        text-transform:uppercase;
+        padding: 1em;
+        font-size: 12px;
+    }
+
+        /*BARRA DE NAVEGACION*/
+
+
+    .logo {
+        width: 120px;
+    }
+
+    nav > ul{
+        flex-direction: column;
+        background-color: rgb(29, 29, 167);
+        position: fixed;
+        left: 0;
+        top: 158px;
+        width: 100%;
+        height: 0px;
+        transition: all 300ms ease;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav > ul > li > a:hover{
+        transform: scale(1);
+    }
+
+    nav ul li ul{
+        left: 90px;
+    }
+
+    nav > ul > li:hover ul{
+        top: 50px;
+    }
+
+    #label__check{
+        display: block;
+    }
+
+    .icon__menu{
+        display: flex;
+    }
+
+    #check__menu:checked ~ nav > ul{
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /*PIE DE PAGINA*/
+
+
+    .pie-pagina .grupo-1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    .pie-pagina .grupo-1 .box p{
+        color: #efefef;
+        margin-bottom: 10px;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .pie-pagina .grupo-1 .box figure img{
+        width: 120px;
+    }
+
+    .pie-pagina .grupo-1 .box h2{
+        color: #fff;
+        margin-bottom: 25px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .pie-pagina .grupo-1 .red-social a{
+        display: inline-block;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        color: #fff;
+        margin-right: 10px;
+        background-color: #0d2033;
+        text-align: center;
+        transition: all 30ms ease;
+    }
+    
+    .pie-pagina .grupo-1 .red-social a:hover{
+        color: aquamarine;
+    }
+
+    .pie-pagina .grupo-1 .red-social{
+        text-align: center;
+    }
+
+    .pie-pagina .grupo-2 small{
+        font-size: 7px;
+    }
+
+
+    /*GALERIA*/
+
+    .galeria-fila1 img{
+        border: 1px solid black;
+        border-radius: 2%;
+        width: 110px;
+    }
+
+
+
+    /*ITUTLO Y NOSOTROS*/
+
+    div h1{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(35, 106, 211);
+        margin-top: 150px;
+        font-size: 25px;
+    }
+    
+    .titulo-hygge h2{
+        font-family: 'Lora', serif;
+        color: rgb(35, 106, 211);
+        font-size: 20px;
+        margin-bottom: 100px;
+    }
+
+    .seccion-nosotros{
+        margin: 0px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .nosotros-titulo h2{
+        font-family: 'Lora', serif;
+        color: rgb(35, 106, 211);
+        margin-top: 8%;
+        font-size: 20px;
+    }
+    
+    .seccion-nosotros p{
+        text-align: center;
+        padding: 0px;
+        font-size: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgb(35, 106, 211);
+        margin-bottom: 30px;
+    }
+
+
+    /*FONDOS*/
+
+    body{
+        background-image: none;
+    }
+
+    #departamentos{
+        background-image: none;
+    }
+}
+
+
